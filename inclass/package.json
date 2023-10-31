@@ -4,7 +4,7 @@
   "description": "All course examples",
   "main": "index.js",
   "scripts": {
-    "practice": "./scripts/run-file.sh",
+    "practice": "cd ./scripts && \"./run-file.sh\"",
     "test": "jest"
   },
   "author": "",

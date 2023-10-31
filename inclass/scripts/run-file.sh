@@ -15,17 +15,17 @@ echo ${VAR1}
 if [ "$TYPE" = "$SIMPLE_CODE_TYPE" ]; then
     npx ts-node ${PRACTICE_FOLDER}.ts
 
-elif [ "$TYPE" = "$CODE_TYPE" ]; then
-    npx ts-node ${PRACTICE_FOLDER}/$2.ts
+if [ "$TYPE" = "$CODE_TYPE" ]; then
+    npx ts-node --no-tty ${PRACTICE_FOLDER}/$2.ts
 
 elif [ "$TYPE" = "$TEST_TYPE" ]; then
-    npm test -- ${PRACTICE_FOLDER}/$2.spec.ts
+    npm test -- --no-tty ${PRACTICE_FOLDER}/$2.spec.ts
     
 elif [ "$TYPE" = "$TEST_GLOBAL_TYPE" ]; then
-    npm test -- ${PRACTICE_FOLDER}/
+    npm test -- --no-tty ${PRACTICE_FOLDER}/
 
 elif [ "$TYPE" = "$DOJO_TYPE" ]; then
-    npm test -- ${PRACTICE_FOLDER} --watch
+    npx jest --no-tty -- ${PRACTICE_FOLDER} --watch
 
 else
     echo "No type supported"

@@ -1,3 +1,4 @@
+import { describe, it} from "node:test";
 import { Game, createBowlingGame } from "./bowlingGame";
 
 describe('Test bowling game', () => {
